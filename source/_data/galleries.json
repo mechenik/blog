@@ -1,0 +1,75 @@
+[
+	{
+      "name": "动漫",
+      "cover": "images/2020100314.jpg",
+      "description": "我的图床",
+      "photos": [
+        "images/202010031.jpg",
+        "images/202010032.jpg",
+        "images/202010033.jpg",
+        "images/202010034.jpg",
+        "images/202010035.jpg",
+        "images/202010036.jpg",
+        "images/202010037.jpg",
+		"images/202010038.jpg",
+		"images/202010039.jpg",
+		"images/2020100310.jpg",
+		"images/2020100311.jpg",
+		"images/2020100312.jpg",
+		"images/2020100313.jpg",
+		"images/2020100314.jpg",
+		"images/2020100315.jpg",
+		"images/2020100316.jpg",
+		"images/2020100317.jpg",
+		"images/2020100318.jpg",
+		"images/2020100319.jpg"
+                
+      ]
+    },
+
+    {
+      "name": "2020",
+      "cover": "images/node1.png",
+      "description": "我的图床",
+      "photos": [
+        "images/node1.png",
+        "images/node2.jpg",
+        "images/node3.jpg",
+        "images/node4.jpg",
+        "images/node5.jpg",
+        "images/node6.jpg",
+        "images/node7.jpg",
+        "images/node8.jpg",
+		"images/1601441912409979.jpg",
+		"images/1601441912752112.jpg",
+		"images/1601441913223902.jpg",
+		"images/1601441913335135.jpg",
+		"images/1601441913413461.jpg",
+		"images/1601441913705770.jpg",
+		"images/1601441913859019.jpg",
+		"images/1601441913962320.jpg",
+		"images/1601441914135393.jpg",
+		"images/1601441914601018.jpg",
+		"images/1601441914624222.jpg",
+		"images/1601441914632427.jpg",
+		"images/1601441914647393.jpg"
+		
+      ]
+    },
+	
+	{
+      "name": "二次元",
+      "cover": "images/ecy5.jpg",
+      "description": "我的图床",
+      "photos": [
+        "images/ecy1.jpg",
+        "images/ecy2.jpg",
+        "images/ecy3.jpg",
+        "images/ecy4.jpg",
+        "images/ecy5.jpg",
+        "images/ecy6.jpg",
+        "images/ecy7.jpg"
+                
+      ]
+    }
+]
