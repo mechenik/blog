@@ -249,10 +249,10 @@ _:future,
   display: flex
   flex-wrap: wrap
   align-items: center
-  padding: 0 400px
+  padding: 0 36px
   width: 100%
-  height: 0px
-  font-size: 1.6em
+  height: 60px
+  font-size: 1.3em
   opacity: 0
   transition: all .5s
 
@@ -302,22 +302,6 @@ _:future,
       i.expand
         padding: 4px
         transition: transform .3s
-
-      & > a
-        &:after
-          position: absolute
-          bottom: 0
-          left: 0
-          z-index: -1
-          width: 0
-          height: 3px
-          background-color: lighten($theme-color, 30%)
-          content: ''
-          transition: all .3s ease-in-out
-
-        &:hover
-          &:after
-            width: 100%
 
       .menus_item_child
         position: absolute
@@ -377,3 +361,19 @@ _:future,
     text-shadow: .05rem .05rem .1rem rgba($dark-black, .3)
     font-size: .78em
     cursor: pointer
+
+    &:not(.child)
+      &:after
+        position: absolute
+        bottom: 0
+        left: 0
+        z-index: -1
+        width: 0
+        height: 3px
+        background-color: lighten($theme-color, 30%)
+        content: ''
+        transition: all .3s ease-in-out
+
+      &:hover
+        &:after
+          width: 100%

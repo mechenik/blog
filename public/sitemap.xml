@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.pt1080.com/Gallery/wallpaper/index.html</loc>
+    
+    <lastmod>2021-06-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.pt1080.com/Gallery/index.html</loc>
+    
+    <lastmod>2021-06-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.pt1080.com/posts/21bc.html</loc>
     
     <lastmod>2020-10-06</lastmod>
@@ -23,14 +37,14 @@
   </url>
   
   <url>
-    <loc>https://blog.pt1080.com/galleries/%E5%8A%A8%E6%BC%AB/index.html</loc>
+    <loc>https://blog.pt1080.com/Gallery/%E5%8A%A8%E6%BC%AB/index.html</loc>
     
     <lastmod>2020-10-03</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.pt1080.com/galleries/%E4%BA%8C%E6%AC%A1%E5%85%83/index.html</loc>
+    <loc>https://blog.pt1080.com/Gallery/%E4%BA%8C%E6%AC%A1%E5%85%83/index.html</loc>
     
     <lastmod>2020-10-03</lastmod>
     
@@ -128,21 +142,7 @@
   </url>
   
   <url>
-    <loc>https://blog.pt1080.com/galleries/2020/index.html</loc>
-    
-    <lastmod>2020-09-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.pt1080.com/galleries/index.html</loc>
-    
-    <lastmod>2020-09-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.pt1080.com/404.html</loc>
+    <loc>https://blog.pt1080.com/Gallery/2020/index.html</loc>
     
     <lastmod>2020-09-16</lastmod>
     
@@ -193,20 +193,6 @@
 
   
   <url>
-    <loc>https://blog.pt1080.com/tags/%E6%B8%B8%E6%88%8F/</loc>
-    <lastmod>2021-06-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.pt1080.com/tags/%E5%85%8D%E8%B4%B9/</loc>
-    <lastmod>2021-06-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.pt1080.com/tags/hexo/</loc>
     <lastmod>2021-06-24</lastmod>
     <changefreq>daily</changefreq>
@@ -221,7 +207,14 @@
   </url>
   
   <url>
-    <loc>https://blog.pt1080.com/tags/PC%E6%B8%B8%E6%88%8F/</loc>
+    <loc>https://blog.pt1080.com/tags/%E6%B8%B8%E6%88%8F/</loc>
+    <lastmod>2021-06-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.pt1080.com/tags/%E5%85%8D%E8%B4%B9/</loc>
     <lastmod>2021-06-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -234,17 +227,24 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://blog.pt1080.com/tags/PC%E6%B8%B8%E6%88%8F/</loc>
+    <lastmod>2021-06-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
-    <loc>https://blog.pt1080.com/categories/%E6%B8%B8%E6%88%8F/</loc>
+    <loc>https://blog.pt1080.com/categories/Hexo/</loc>
     <lastmod>2021-06-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.pt1080.com/categories/Hexo/</loc>
+    <loc>https://blog.pt1080.com/categories/%E6%B8%B8%E6%88%8F/</loc>
     <lastmod>2021-06-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

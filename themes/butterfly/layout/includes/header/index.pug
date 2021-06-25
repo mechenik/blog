@@ -1,6 +1,6 @@
 if !theme.disable_top_img && page.top_img !== false
   if is_post()
-    - var top_img = page.top_img || page.cover || page.randomcover || theme.default_top_img
+    - var top_img = page.top_img || page.cover || page.randomcover
   else if is_page()
     - var top_img = page.top_img || theme.default_top_img
   else if is_tag()
@@ -34,17 +34,17 @@ header#page-header(class=isHomeClass style=bg_img)
     if is_post()
       include ./post-info.pug
     else if is_home() 
-//-      #site-info
-//-        h1#site-title=site_title
-//-        if theme.subtitle.enable
-//-          - var loadSubJs = true
-//-          #site-subtitle
-//-            span#subtitle
-//-        if(theme.social)
-//-          #site_social_icons
-//-            !=fragment_cache('social', function(){return partial('includes/header/social')})
-//-      #scroll-down
-//-        i.fas.fa-angle-down.scroll-down-effects
-//-    else
-//-      #page-site-info
-//-        h1#site-title=site_title
+      #site-info
+        h1#site-title=site_title
+        if theme.subtitle.enable
+          - var loadSubJs = true
+          #site-subtitle
+            span#subtitle
+        if(theme.social)
+          #site_social_icons
+            !=fragment_cache('social', function(){return partial('includes/header/social')})
+      #scroll-down
+        i.fas.fa-angle-down.scroll-down-effects
+    else
+      #page-site-info
+        h1#site-title=site_title
