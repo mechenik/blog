@@ -2,6 +2,7 @@
 title: 说说
 type: "artitalk"
 layout: "artitalk"
+comments: false
 ---
 <script>
 var img="https://blog.pt1080.com/medias/avatar.jpg";

@@ -3,6 +3,7 @@ title: 我的相册
 date: 2020-09-17 01:23:43
 type: "gallery"
 layout: "gallery"
+comments: false
 ---
 <div class="gallery-group-main">
 {% galleryGroup '壁纸' '收藏的一些壁纸' '/Gallery/wallpaper' https://i.loli.net/2019/11/10/T7Mu8Aod3egmC4Q.png %}
