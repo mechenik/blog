@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', function () {
         loop: true,
         transitionEffect: 'slide',
         protect: true,
-        buttons: ['slideShow', 'fullScreen', 'thumbs', 'close'],
+        buttons: ['download','slideShow', 'fullScreen', 'thumbs', 'close'],
         hash: false
       })
     }

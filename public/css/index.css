@@ -4932,7 +4932,7 @@ figure.gallery-group .gallery-group-name:after {
 }
 blockquote.pullquote {
   position: relative;
-  max-width: 45%;
+  max-width: 100%;
   font-size: 110%;
 }
 blockquote.pullquote.left {
