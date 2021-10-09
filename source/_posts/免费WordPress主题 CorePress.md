@@ -2,7 +2,7 @@
 title: 高颜值的免费WordPress主题 CorePress
 author: dabaireso
 top: false
-cover: false
+cover: 'https://p6.toutiaoimg.com/origin/pgc-image/ccb0ac6a68054f8296dbfaea255aa1de'
 toc: false
 mathjax: false
 summary: CorePress是免费Wordpress主题里一款高颜值的主题！
