@@ -7,7 +7,7 @@ toc: false
 mathjax: false
 summary: CorePress是免费Wordpress主题里一款高颜值的主题！
 categories: 网站主题
-abbrlink: dbfd
+abbrlink:
 date: 2021-10-08 09:25:00
 img:
 coverImg:
