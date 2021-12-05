@@ -9,7 +9,7 @@ categories: Windows
 tags:
   - 系统
 abbrlink:
-date: 2021-09-09 09:25:00
+date: 2021-11-09 09:25:00
 img:
 coverImg:
 password:
@@ -17,46 +17,61 @@ password:
 
 zabbix是一个企业级解决方案，支持实时监控数千台服务器，虚拟机和网络设备采集百万级监控指标。
 
-## 开始安装
+## Zabbix的主要特点
+
+1.指标收集:从任何设备、系统、应用程序上进行指标采集；
+
+2.问题监测:定位智能阀值；
+
+3.可视化:单一界面管理平台；
+
+4.告警和修复:确保及时，有效的告警
+
+5.安全和认证：保护您所有层级的数据
+
+6.轻松搭建部署：大批模板、开箱即用、节省您宝贵的时间
+
+7.自动发现：自动监控大型动态环境
+
+8.分布式监控：无限制扩展
 
 
 ![](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.1j74912g8rpc.png)
 
-现在我们使用命令 mstsc /admin 强制登录服务器
 
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.1k8tves0mrz4.png)
+## 部署实践
 
-需要在“远程桌面服务”--安装“远程桌面授权”--默认安装
+### 1.关闭防火墙和selinux
 
-“计算机”单击右键“管理”--“角色”
+```
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.2butnsjwwbr4.png)
+```
 
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.5bgsi1ct53k0.png)
+运行以下命令关闭防火墙
 
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.6b5ufnnst6c0.png)
+```
+systemctl disable --now firewalld
+```
 
-默认的都是 “下一步”
+重启生效
 
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.65mjyc0u4yg0.png)
+```
+reboot
+```
 
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.4ddxhjkhu9u0.png)
+### 2 .安装zabbix rpm源
 
-正在安装
+运行以下命令安装zabbix rpm源
 
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.2f96mr9ra3r.png)
+```
+rpm -Uvh https://mirrors.aliyun.com/zabbix/zabbix/5.0/rhel/7/x86_64/zabbix-release-5.0-1.el7.noarch.rpm
 
-需要重启，才可以完成安装
+sed -i 's#http://repo.zabbix.com#https://mirrors.aliyun.com/zabbix#' /etc/yum.repos.d/zabbix.repo
 
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.54m8k85quec0.png)
+yum clean all
+```
 
-## 二、 远程桌面授权激活
-
-管理工具——远程桌面服务——(远程桌面授权管理)RD授权管理器；
-
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.5y1wo1mst2k0.png)
-
-由于我们的RD授权服务器还未激活，所以授权服务器图标右下角显示红色×号；
 
 右击授权服务器——激活服务器
 
