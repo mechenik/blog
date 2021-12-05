@@ -1,19 +1,19 @@
 ---
-title: 高颜值的免费WordPress主题 CorePress
+title: Centos7部署 Zabbix5
 author: dabaireso
 top: false
 cover: 'https://p6.toutiaoimg.com/origin/pgc-image/ccb0ac6a68054f8296dbfaea255aa1de'
 toc: false
 mathjax: false
-summary: CorePress是免费Wordpress主题里一款高颜值的主题！
-categories: 网站主题
+summary: zabbix是一个企业级解决方案，支持实时监控数千台服务器，虚拟机和网络设备采集百万级监控指标。
+categories: 运维手记
 abbrlink:
 date: 2021-11-04 09:25:00
 img:
 coverImg:
 password:
 tags:
-   - 主题
+   - Zabbix
 ---
 ![](https://p6.toutiaoimg.com/origin/pgc-image/ccb0ac6a68054f8296dbfaea255aa1de)
 
