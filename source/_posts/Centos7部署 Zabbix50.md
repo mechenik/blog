@@ -2,12 +2,13 @@
 title: Centos7 部署 Zabbix5.0
 author: mechenik
 top: false
-cover: 'https://img.zcool.cn/community/0109965ca02190a8012141686db857.jpg'
+cover: 'https://cdn.jsdelivr.net/npm/images-npm@1.0.0/blog/operation_1032_23.jpg'
 mathjax: false
 summary: zabbix是一个企业级解决方案，支持实时监控数千台服务器，虚拟机和网络设备采集百万级监控指标。
-categories: Windows
+categories: 运维手册
 tags:
-  - 系统
+  - Linux
+  - Zabbix
 abbrlink:
 date: 2021-11-09 09:25:00
 img:
@@ -34,10 +35,6 @@ zabbix是一个企业级解决方案，支持实时监控数千台服务器，�
 7.自动发现：自动监控大型动态环境
 
 8.分布式监控：无限制扩展
-
-
-![](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.1j74912g8rpc.png)
-
 
 ## 部署实践
 
@@ -72,61 +69,83 @@ sed -i 's#http://repo.zabbix.com#https://mirrors.aliyun.com/zabbix#' /etc/yum.re
 yum clean all
 ```
 
+### 3 .安装zabbix server和agent
 
-右击授权服务器——激活服务器
+运行以下命令安装zabbix server和agent
+```
+yum install zabbix-server-mysql zabbix-agent -y
+```
+### 4 .安装zabbix前端
 
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.5zat1wpp43w0.png)
+运行以下命令 安装Software Collections
+```
+yum install centos-release-scl -y
+```
+运行以下命令， 将[zabbix-frontend]下的 enabled 改为 1
+```
+vi /etc/yum.repos.d/zabbix.repo
+```
+:wq 保存
 
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.6nrdcbjqy6g0.png)
+运行以下命令安装zabbix 前端和相关环境
+```
+yum install zabbix-web-mysql-scl zabbix-apache-conf-scl -y
+```
+### 5 .安装mariadb数据库
 
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.1wucs2nyty8w.png)
+运行以下命令安装数据库
+```
+yum install mariadb-server -y
+```
+运行以下命令启动数据库并配置开机启动
+```
+systemctl enable --now mariadb
+```
+运行以下命令初始化数据库
+```
+mysql_secure_installation
+```
+### 6 .zabbix数据库配置
 
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.1hhocsn4hups.png)
+运行以下命令创建zabbix数据库及数据库用户
+```
+mysql -u root -p （输入数据库root密码进入数据库）
+```
+运行以下命令创建zabbix数据库
+```
+create database zabbix default character set utf8 COLLATE utf8_ bin ;
+```
+运行以下命令创建zabbix数据库用户
+```
+grant all privileges on zabbix.* to zabbix@localhost identified by " zabbix_pwd " ;
+quit 退出
+```
+运行以下命令导入zabbix数据库
+```
+zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix
+```
+### 7 .zabbix配置及前端页面安装
 
-输入注册信息（必填选项），下一步
+运行以下命令修改zabbix server配置文件里的数据库信息
+```
+vi /etc/zabbix/zabbix_server.conf
+找到 DBPassword=password ，将数据库密码改为zabbix数据库的密码
+:wq 保存
+```
 
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.137zmti5zzsg.png)
+运行以下命令修改zabbix php配置文件里的时区
+```
+vi /etc/opt/rh/rh-php72/php-fpm.d/zabbix.conf
+```
+找到php_value[date.timezone]，去掉注释及前面的标点符号，改成
+php_value[date.timezone] = Asia/Shanghai
 
-可选信息无需输入，直接下一步
+:wq 保存
+```
 
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.2fy82zm34olc.png)
-
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.4t5rsntqpgu0.png)
-
-默认已经勾选“立即启动许可证安装向导”，直接下一步
-
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.6yb8t6vgy3k0.png)
-
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.6zoa2nah5z40.png)
-
-许可证计划选择“企业协议”，下一步
-
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.1k4sjfdmrm3k.png)
-
-输入协议号码：```6565792```，下一步
-
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.29d4fobudce8.png)
-
-产品版本：“Windows Server 2008或Windows Server 2008 R2”
-
-许可证类型：“TS或RDS每用户CAL”
-
-数量：输入你想允许的最大远程连接数量
-
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.5k3jl57ac8k0.png)
-
-点击完成
-
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.3q5h84bm2p60.png)
-
-RD授权服务器已经激活，图标也由红×变为绿√，到这里远程桌面服务的配置和激活全部完成
-
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.2ku2xacfpk80.png)
-
-还需要修改  “远程桌面授权服务器”，需要指定，“添加”
-
-![image](https://cdn.jsdelivr.net/gh/mechenik/imgpt1080@master/images/image.423yo71t5iu0.png)
-
-添加===每用户
-
-至此安装完成，敬请使用。
+运行以下命令启动相关服务并配置开机自动启动
+```
+systemctl restart zabbix-server zabbix-agent httpd rh-php72-php-fpm
+systemctl enable zabbix-server zabbix-agent httpd rh-php72-php-fpm
+```
+使用浏览器访问zabbix web页面继续安装
