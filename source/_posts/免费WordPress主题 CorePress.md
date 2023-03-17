@@ -17,6 +17,8 @@ tags:
 ---
 ![](https://p6.toutiaoimg.com/origin/pgc-image/ccb0ac6a68054f8296dbfaea255aa1de)
 
+![](https://wx1.sinaimg.cn/large/d61bf0b5ly1gmaejpmol7j20wn0dwwqu.jpg)
+
 CorePress是免费Wordpress主题里一款高颜值的主题，比许多百元以上的收费主题还强，分享一下。
 
 ## 项目地址
